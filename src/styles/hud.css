@@ -1,0 +1,635 @@
+/* The persistent sim HUD: boot screen, pill nav, ticker, mini map,
+   speedo, pause menu, and the kart that drives down the page.
+   Imported by src/main.ts. */
+
+/* ---------------------------------------------------------------- boot */
+
+.boot {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: grid;
+  place-items: center;
+  background: var(--bg-deep);
+  text-align: center;
+  padding: var(--gut);
+}
+
+.boot[hidden] {
+  display: none;
+}
+
+.boot.is-out {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.42s var(--ease-out);
+}
+
+.boot__inner {
+  display: grid;
+  justify-items: center;
+  gap: 22px;
+  max-width: 460px;
+}
+
+.boot__badge {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  box-shadow: var(--glow-red);
+  animation: boot-in 0.7s var(--ease-out) both;
+}
+
+@keyframes boot-in {
+  from {
+    opacity: 0;
+    transform: scale(0.82);
+  }
+}
+
+.boot__word {
+  width: 190px;
+  opacity: 0.94;
+}
+
+.boot__bar {
+  width: min(320px, 70vw);
+  height: 5px;
+  border-radius: 3px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.boot__bar i {
+  display: block;
+  height: 100%;
+  width: 0;
+  background: repeating-linear-gradient(90deg,
+      var(--red) 0 10px,
+      #f2f2f2 10px 20px);
+  animation: boot-fill 1.25s var(--ease-out) forwards;
+}
+
+@keyframes boot-fill {
+  to {
+    width: 100%;
+  }
+}
+
+.boot__tip {
+  min-height: 3.2em;
+  max-width: 42ch;
+  color: var(--text-dim);
+  font-size: 15px;
+}
+
+.boot__tip b {
+  display: block;
+  font-family: var(--font-hud);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  color: var(--gold);
+  margin-bottom: 6px;
+}
+
+.boot__hint {
+  font-family: var(--font-hud);
+  font-size: 10px;
+  letter-spacing: 0.24em;
+  color: var(--text-faint);
+}
+
+.boot__start {
+  animation: pulse 2.2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  50% {
+    box-shadow: 0 10px 44px -8px rgba(209, 10, 10, 1);
+  }
+}
+
+/* ------------------------------------------------------------ top nav */
+
+.hud-top {
+  position: fixed;
+  inset-inline: 0;
+  top: 0;
+  z-index: 90;
+  padding: 10px var(--gut) 0;
+  pointer-events: none;
+}
+
+.hud-top__row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  max-width: 1440px;
+  margin-inline: auto;
+}
+
+.pill {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 6px;
+  border-radius: var(--r-pill);
+  background: rgba(14, 14, 16, 0.76);
+  border: 1px solid var(--line);
+  backdrop-filter: blur(16px) saturate(130%);
+  -webkit-backdrop-filter: blur(16px) saturate(130%);
+  box-shadow: 0 10px 30px -14px rgba(0, 0, 0, 0.9);
+  pointer-events: auto;
+}
+
+.pill--logo {
+  padding: 5px 14px 5px 6px;
+  gap: 10px;
+}
+
+.pill--logo img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+.pill--logo span {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 17px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.pill--nav {
+  margin-inline: auto;
+}
+
+.nav-link {
+  padding: 8px 15px;
+  border-radius: var(--r-pill);
+  font-family: var(--font-hud);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  color: var(--text-dim);
+  transition: color 0.18s, background 0.18s;
+}
+
+.nav-link:hover {
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.nav-link[aria-current='true'] {
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.pill--box {
+  padding: 0;
+  border-color: var(--red);
+  background: var(--red);
+  box-shadow: 0 10px 30px -12px rgba(209, 10, 10, 0.95);
+}
+
+.pill--box a {
+  padding: 11px 20px;
+  font-family: var(--font-hud);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: #fff;
+}
+
+/* the one-tap Razorpay route, always on screen */
+.pill--fund {
+  padding: 0;
+  border-color: rgba(217, 162, 27, 0.6);
+  background: rgba(217, 162, 27, 0.14);
+}
+
+.pill--fund a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 18px;
+  font-family: var(--font-hud);
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: var(--gold-soft);
+  transition: background 0.18s, color 0.18s;
+}
+
+.pill--fund a:hover {
+  background: rgba(217, 162, 27, 0.26);
+  color: #fff;
+}
+
+.pill--fund svg {
+  width: 15px;
+  height: 15px;
+  flex: none;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 1.9;
+}
+
+@media (max-width: 760px) {
+  .pill--fund a span {
+    display: none;
+  }
+
+  .pill--fund a {
+    padding: 11px 13px;
+  }
+}
+
+.pill--icon {
+  padding: 0;
+}
+
+.pill--icon button {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+}
+
+.pill--icon svg {
+  width: 17px;
+  height: 17px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 1.8;
+}
+
+.menu-btn {
+  display: none;
+}
+
+@media (max-width: 1080px) {
+  .pill--nav {
+    display: none;
+  }
+
+  .menu-btn {
+    display: grid;
+    margin-left: auto;
+  }
+}
+
+@media (max-width: 560px) {
+  .pill--logo span {
+    display: none;
+  }
+
+  .pill--box a {
+    padding: 11px 15px;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+  }
+}
+
+/* ------------------------------------------------------------- ticker */
+
+.ticker {
+  position: fixed;
+  inset-inline: 0;
+  top: 0;
+  z-index: 80;
+  height: 22px;
+  overflow: hidden;
+  background: rgba(5, 5, 6, 0.9);
+  border-bottom: 1px solid var(--line);
+  pointer-events: none;
+}
+
+.ticker__track {
+  display: flex;
+  gap: 30px;
+  padding-top: 4px;
+  white-space: nowrap;
+  font-family: var(--font-hud);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  color: var(--text-faint);
+  animation: ticker 46s linear infinite;
+  will-change: transform;
+}
+
+.ticker__track span::after {
+  content: ' \00B7';
+  color: var(--red);
+}
+
+@keyframes ticker {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+body.has-ticker .hud-top {
+  top: 22px;
+}
+
+/* ---------------------------------------------------------- mini map */
+
+.hud-map {
+  position: fixed;
+  left: var(--gut);
+  bottom: 18px;
+  z-index: 85;
+  display: grid;
+  gap: 6px;
+  justify-items: start;
+  padding: 10px 12px 8px;
+  border-radius: 16px;
+  background: rgba(12, 12, 14, 0.82);
+  border: 1px solid var(--line);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  pointer-events: none;
+  opacity: 0.3;
+  transition: opacity 0.35s var(--ease-out);
+}
+
+/* the HUD is a toy, so it gets out of the way when you stop to read */
+body.is-scrolling .hud-map,
+body.is-scrolling .hud-speedo,
+.hud-map:hover {
+  opacity: 1;
+}
+
+.hud-map__svg {
+  width: 116px;
+  height: 78px;
+  pointer-events: auto;
+  filter: drop-shadow(0 6px 16px rgba(0, 0, 0, 0.8));
+}
+
+.hud-map__svg .track {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.16);
+  stroke-width: 4;
+  stroke-linecap: round;
+}
+
+.hud-map__svg .done {
+  fill: none;
+  stroke: var(--red);
+  stroke-width: 4;
+  stroke-linecap: round;
+}
+
+.hud-map__svg .corner {
+  fill: rgba(255, 255, 255, 0.34);
+  cursor: pointer;
+  transition: fill 0.18s;
+}
+
+.hud-map__svg .corner:hover,
+.hud-map__svg .corner.on {
+  fill: var(--gold);
+}
+
+.hud-map__svg .dot {
+  fill: #fff;
+  filter: drop-shadow(0 0 5px rgba(255, 60, 40, 0.95));
+}
+
+.hud-sector {
+  font-family: var(--font-hud);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  color: var(--text-faint);
+}
+
+.hud-sector b {
+  color: var(--gold);
+}
+
+/* ----------------------------------------------------------- speedo */
+
+.hud-speedo {
+  position: fixed;
+  right: var(--gut);
+  bottom: 18px;
+  z-index: 85;
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  padding: 8px 14px;
+  border-radius: 14px;
+  background: rgba(14, 14, 16, 0.76);
+  border: 1px solid var(--line);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  pointer-events: none;
+  font-family: var(--font-hud);
+  opacity: 0.3;
+  transition: opacity 0.35s var(--ease-out);
+}
+
+.hud-speedo__n {
+  font-size: 21px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  min-width: 2.4ch;
+  text-align: right;
+}
+
+.hud-speedo__u {
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  color: var(--text-faint);
+}
+
+.hud-speedo__g {
+  margin-left: 4px;
+  padding: 2px 8px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.08);
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--gold);
+}
+
+@media (max-width: 860px) {
+  .hud-map__svg {
+    width: 84px;
+    height: 56px;
+  }
+
+  .hud-sector {
+    font-size: 9px;
+  }
+
+  .hud-speedo {
+    padding: 6px 10px;
+  }
+
+  .hud-speedo__n {
+    font-size: 17px;
+  }
+}
+
+/* On a phone the map and speedo have nowhere to sit that is not on top of
+   the content, and the brief wants the HUD down to logo, BOX BOX and menu. */
+@media (max-width: 760px) {
+  .hud-map,
+  .hud-speedo {
+    display: none;
+  }
+}
+
+/* ------------------------------------------------------- pause menu */
+
+.pause {
+  position: fixed;
+  inset: 0;
+  z-index: 150;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  gap: 20px;
+  padding: calc(var(--gut) + 8px) var(--gut) var(--gut);
+  background: rgba(5, 5, 6, 0.97);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  overflow-y: auto;
+}
+
+.pause[hidden] {
+  display: none;
+}
+
+.pause__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.pause__title {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(30px, 6vw, 54px);
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+.pause__list {
+  display: grid;
+  gap: 2px;
+  align-content: start;
+  max-width: 820px;
+  width: 100%;
+  margin-inline: auto;
+}
+
+.pause__item {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  padding: 13px 16px;
+  border-radius: 12px;
+  border: 1px solid transparent;
+  transition: background 0.16s, border-color 0.16s, transform 0.16s;
+}
+
+.pause__item:hover,
+.pause__item:focus-visible {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: var(--line);
+  transform: translateX(5px);
+}
+
+.pause__item b {
+  font-family: var(--font-hud);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  color: var(--gold);
+  min-width: 3ch;
+}
+
+.pause__item span {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(22px, 3.4vw, 34px);
+  text-transform: uppercase;
+  line-height: 1.05;
+}
+
+.pause__foot {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  border-top: 1px solid var(--line);
+  padding-top: 18px;
+}
+
+/* -------------------------------------------- the kart on the racing line */
+
+.racing-line {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: visible;
+}
+
+.racing-line path {
+  fill: none;
+  stroke: rgba(217, 162, 27, 0.16);
+  stroke-width: 2;
+  stroke-dasharray: 10 14;
+}
+
+.scroll-kart {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 62px;
+  margin: -46px 0 0 -31px;
+  pointer-events: none;
+  filter: drop-shadow(0 10px 18px rgba(0, 0, 0, 0.85));
+  opacity: 0.95;
+}
+
+.scroll-kart__brake {
+  position: absolute;
+  inset: auto 0 6% 0;
+  height: 7%;
+  border-radius: 3px;
+  background: var(--red-hot);
+  opacity: 0;
+  filter: blur(2px);
+  transition: opacity 0.12s;
+}
+
+.scroll-kart.braking .scroll-kart__brake {
+  opacity: 0.95;
+}
+
+@media (max-width: 860px) {
+  .scroll-kart {
+    width: 40px;
+    margin: -30px 0 0 -20px;
+  }
+}
+
+.track-layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}

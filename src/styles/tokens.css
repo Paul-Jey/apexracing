@@ -1,0 +1,61 @@
+/* Apex Racing design tokens.
+   Colours come off the 2026 proposal and the phoenix badge. */
+
+:root {
+  /* surface */
+  --bg-pit: #0a0a0a;
+  --bg-deep: #050506;
+  --card: rgba(23, 23, 26, 0.72);
+  --card-solid: #17171a;
+  --card-raised: rgba(32, 32, 37, 0.82);
+  --line: rgba(255, 255, 255, 0.08);
+  --line-strong: rgba(255, 255, 255, 0.16);
+
+  /* brand */
+  --red: #d10a0a;
+  --red-hot: #ff2d1a;
+  --red-deep: #8e0000;
+  --gold: #d9a21b;
+  --gold-soft: #f0c86a;
+  --teal: #2ec4b6;
+
+  /* the electric side of the brand, used only where the EV matters */
+  --volt: #5ce1ff;
+  --volt-deep: #2f7bff;
+  --volt-glow: 0 0 22px rgba(92, 225, 255, 0.55);
+
+  /* type */
+  --text: #f4f4f5;
+  --text-dim: #8a8a93;
+  --text-faint: #5a5a63;
+
+  --font-display: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+  --font-hud: 'Chakra Petch', ui-monospace, 'Courier New', monospace;
+  --font-body: 'Barlow', system-ui, -apple-system, sans-serif;
+
+  /* rhythm */
+  --r-card: 20px;
+  --r-pill: 999px;
+  --r-chip: 8px;
+
+  --gut: clamp(16px, 4vw, 56px);
+  --stack: clamp(56px, 9vw, 130px);
+
+  --hud-h: 58px;
+
+  /* light */
+  --glow-red: 0 0 60px rgba(209, 10, 10, 0.34);
+  --lift: 0 18px 44px rgba(0, 0, 0, 0.55);
+  --inner: inset 0 1px 0 rgba(255, 255, 255, 0.05),
+           inset 0 -24px 40px -28px rgba(0, 0, 0, 0.9);
+
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-snap: cubic-bezier(0.4, 1.3, 0.5, 1);
+}
+
+@media (max-width: 760px) {
+  :root {
+    --hud-h: 52px;
+    --r-card: 16px;
+  }
+}

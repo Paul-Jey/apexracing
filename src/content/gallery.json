@@ -1,0 +1,240 @@
+[
+  {
+    "slug": "fkdc-kart-front",
+    "tag": "garage",
+    "alt": "The Apex Racing EV kart on its wheels in the FKDC paddock, number 05 on the nose plate.",
+    "w": 1079,
+    "h": 1079
+  },
+  {
+    "slug": "fkdc-pit-work",
+    "tag": "garage",
+    "alt": "Three team members working on the steering column between sessions.",
+    "w": 1079,
+    "h": 1079
+  },
+  {
+    "slug": "fkdc-wiring",
+    "tag": "garage",
+    "alt": "A team member routing the high voltage loom behind the battery box.",
+    "w": 1079,
+    "h": 1079
+  },
+  {
+    "slug": "fkdc-welding",
+    "tag": "garage",
+    "alt": "Sparks off a grinder during a late chassis repair outside the shed.",
+    "w": 1079,
+    "h": 1079
+  },
+  {
+    "slug": "fkdc-grid",
+    "tag": "track",
+    "alt": "The team gathered around the kart during scrutineering at Kari Motor Speedway.",
+    "w": 1079,
+    "h": 1079
+  },
+  {
+    "slug": "fkdc-dusk",
+    "tag": "track",
+    "alt": "The kart silhouetted against a low sun at the end of a test day.",
+    "w": 1079,
+    "h": 1079
+  },
+  {
+    "slug": "fkdc-driver-out",
+    "tag": "track",
+    "alt": "A driver in a full race suit and helmet beside the kart on track.",
+    "w": 1079,
+    "h": 1079
+  },
+  {
+    "slug": "fkdc-paddock",
+    "tag": "events",
+    "alt": "Teams and spectators packed under the paddock awnings at FKDC.",
+    "w": 1079,
+    "h": 1079
+  },
+  {
+    "slug": "fkdc-banner",
+    "tag": "events",
+    "alt": "The Apex Racing Team banner hung over the pit garage at FKDC 2025.",
+    "w": 1079,
+    "h": 1079
+  },
+  {
+    "slug": "fkdc-crew",
+    "tag": "crew",
+    "alt": "The crew lined up in front of the pit lane after a session.",
+    "w": 1079,
+    "h": 1079
+  },
+  {
+    "slug": "crew-pitwall",
+    "tag": "crew",
+    "alt": "Team members piled together on the pit wall, laughing between runs.",
+    "w": 1079,
+    "h": 1079
+  },
+  {
+    "slug": "crew-stand",
+    "tag": "crew",
+    "alt": "Part of the crew sitting together at the circuit in team shirts.",
+    "w": 1079,
+    "h": 1079
+  },
+  {
+    "slug": "driver-onboard",
+    "tag": "track",
+    "alt": "Our driver mid corner, helmet up, hands crossed on the wheel.",
+    "w": 1079,
+    "h": 1349
+  },
+  {
+    "slug": "skidpad-night",
+    "tag": "track",
+    "alt": "The skid pad marked out with tyres, lit by a single floodlight at night.",
+    "w": 1079,
+    "h": 1016
+  },
+  {
+    "slug": "kart-09-dark",
+    "tag": "garage",
+    "alt": "Close crop of the number 09 panel on the kart nose, shot in near darkness.",
+    "w": 1079,
+    "h": 904
+  },
+  {
+    "slug": "driver-portrait",
+    "tag": "crew",
+    "alt": "Black and white portrait of a driver in race overalls.",
+    "w": 1079,
+    "h": 904
+  },
+  {
+    "slug": "handshake",
+    "tag": "events",
+    "alt": "Two team members shaking hands after a run, shot in black and white.",
+    "w": 1079,
+    "h": 904
+  },
+  {
+    "slug": "team-lineup",
+    "tag": "crew",
+    "alt": "The full team gathered in front of the workshop with the kart.",
+    "w": 1079,
+    "h": 906
+  },
+  {
+    "slug": "garage-night",
+    "tag": "garage",
+    "alt": "Work continuing on the kart under the shed roof late in the evening.",
+    "w": 1079,
+    "h": 1019
+  },
+  {
+    "slug": "battery-fit",
+    "tag": "garage",
+    "alt": "Several hands at once fitting hardware into the rear frame.",
+    "w": 1079,
+    "h": 913
+  },
+  {
+    "slug": "helmet-wheel",
+    "tag": "track",
+    "alt": "A driver helmet and gloved hands on the steering wheel, seen from behind.",
+    "w": 1079,
+    "h": 912
+  },
+  {
+    "slug": "rolon-corner",
+    "tag": "track",
+    "alt": "The kart on the far side of the circuit with the treeline behind it.",
+    "w": 1079,
+    "h": 904
+  },
+  {
+    "slug": "gkdc-kart",
+    "tag": "events",
+    "alt": "The kart on track at GKDC with the number board on its side pod.",
+    "w": 1079,
+    "h": 728
+  },
+  {
+    "slug": "gkdc-team",
+    "tag": "events",
+    "alt": "A large group of team members and volunteers under the GKDC paddock tent.",
+    "w": 1079,
+    "h": 752
+  },
+  {
+    "slug": "gkdc-garage",
+    "tag": "garage",
+    "alt": "The kart up on stands inside a corrugated workshop before the event.",
+    "w": 816,
+    "h": 1079
+  },
+  {
+    "slug": "gkdc-weld",
+    "tag": "garage",
+    "alt": "Welding sparks around the steering column during a build session.",
+    "w": 816,
+    "h": 1079
+  },
+  {
+    "slug": "ikr-team",
+    "tag": "events",
+    "alt": "The IKR team photo with the kart, number 16, outside the college blocks.",
+    "w": 1079,
+    "h": 1079
+  },
+  {
+    "slug": "ikr-build",
+    "tag": "garage",
+    "alt": "The kart part built under a tarpaulin during the IKR season.",
+    "w": 1079,
+    "h": 1079
+  },
+  {
+    "slug": "precisio-track",
+    "tag": "track",
+    "alt": "The Precisio combustion kart, number 41, parked on the circuit apron.",
+    "w": 2400,
+    "h": 1800
+  },
+  {
+    "slug": "precisio-pit",
+    "tag": "events",
+    "alt": "The crew working on the Precisio kart in the pit garage.",
+    "w": 2400,
+    "h": 1600
+  },
+  {
+    "slug": "precisio-grid",
+    "tag": "track",
+    "alt": "Three karts side by side on track in front of the trackside hoardings.",
+    "w": 2400,
+    "h": 1600
+  },
+  {
+    "slug": "precisio-crew",
+    "tag": "crew",
+    "alt": "The combustion era team crowded around the kart for a group photo.",
+    "w": 2400,
+    "h": 1600
+  },
+  {
+    "slug": "cheque",
+    "tag": "events",
+    "alt": "Team members receiving a sponsorship cheque from a partner.",
+    "w": 288,
+    "h": 512
+  },
+  {
+    "slug": "ssn-campus",
+    "tag": "events",
+    "alt": "A glass facade on the SSN College of Engineering campus.",
+    "w": 1959,
+    "h": 1469
+  }
+]

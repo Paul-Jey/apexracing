@@ -1,0 +1,6 @@
+node_modules
+dist
+qc
+.vercel
+*.local
+.DS_Store
