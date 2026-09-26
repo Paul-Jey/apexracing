@@ -29,7 +29,10 @@ jobs:
           node-version: 22
           cache: npm
 
-      - run: npm ci
+      # npm install, not npm ci: the lock file carries optional platform
+      # binaries that resolve differently on Windows and on the runner, and
+      # a static build does not need the stricter guarantee.
+      - run: npm install --no-audit --no-fund
 
       - name: Build
         # keeps the canonical link and the share image pointing at wherever

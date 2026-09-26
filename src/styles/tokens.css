@@ -29,8 +29,9 @@
   --text-dim: #8a8a93;
   --text-faint: #5a5a63;
 
-  --font-display: 'Barlow Condensed', 'Arial Narrow', sans-serif;
-  --font-hud: 'Chakra Petch', ui-monospace, 'Courier New', monospace;
+  /* Titillium Web: the family F1's own typeface comes from, openly licensed */
+  --font-display: 'Titillium Web', 'Arial Narrow', system-ui, sans-serif;
+  --font-hud: 'Titillium Web', system-ui, sans-serif;
   --font-body: 'Barlow', system-ui, -apple-system, sans-serif;
 
   /* rhythm */
