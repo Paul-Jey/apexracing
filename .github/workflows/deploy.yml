@@ -29,10 +29,10 @@ jobs:
           node-version: 22
           cache: npm
 
-      # npm install, not npm ci: the lock file carries optional platform
-      # binaries that resolve differently on Windows and on the runner, and
-      # a static build does not need the stricter guarantee.
-      - run: npm install --no-audit --no-fund
+      # npm ci, so the lock file stays the only thing that decides what gets
+      # fetched. Never swap this for npm install to work around a lock file
+      # that is out of sync: fix the lock file instead.
+      - run: npm ci --no-audit --no-fund
 
       - name: Build
         # keeps the canonical link and the share image pointing at wherever
