@@ -1,8 +1,8 @@
 // Titillium Web is the family Formula 1's own typeface is derived from,
 // and it is openly licensed. 900 for display, 600/700 for HUD labels.
+import '@fontsource/titillium-web/latin-300.css';
 import '@fontsource/titillium-web/latin-600.css';
 import '@fontsource/titillium-web/latin-700.css';
-import '@fontsource/titillium-web/latin-700-italic.css';
 import '@fontsource/titillium-web/latin-900.css';
 import '@fontsource/barlow/latin-400.css';
 import '@fontsource/barlow/latin-500.css';
